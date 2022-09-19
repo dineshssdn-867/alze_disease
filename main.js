@@ -25,14 +25,15 @@ var infer = function() {
 
 		$.ajax(settings).then(function(response) {
 			var pretty = $('<pre>');
-			var formatted = JSON.stringify(response, null, 4)
+			// var formatted = JSON.stringify(response, null, 4)
 			// filtered = {
 			// 	"class": formatted.top,
 			// 	"conf": formatted.confidence
 			// }
-			var top = formatted.top;
-			console.log(formatted.top);
-			pretty.html(top);
+			var top = response.top;
+			var conf = response.confidence;
+			//console.log(formatted.top);
+			pretty.html(`Detected dementia level is ${top} with ${conf} confidence`);
 			$('#output').html("").append(pretty);
 			$('html').scrollTop(100000);
 		});
