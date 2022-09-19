@@ -26,11 +26,11 @@ var infer = function() {
 		$.ajax(settings).then(function(response) {
 			var pretty = $('<pre>');
 			var formatted = JSON.stringify(response, null, 4)
-			filtered = {
-				"class": formatted.top,
-				"conf": formatted.confidence
-			}
-			pretty.html(filtered);
+			// filtered = {
+			// 	"class": formatted.top,
+			// 	"conf": formatted.confidence
+			// }
+			pretty.html(formatted["top"]);
 			$('#output').html("").append(pretty);
 			$('html').scrollTop(100000);
 		});
