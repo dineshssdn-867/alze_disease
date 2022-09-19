@@ -31,7 +31,7 @@ var infer = function() {
 			// 	"conf": formatted.confidence
 			// }
 			var top = formatted.top;
-			console.log(formatted["top"]);
+			console.log(formatted.top);
 			pretty.html(top);
 			$('#output').html("").append(pretty);
 			$('html').scrollTop(100000);
